@@ -47,7 +47,7 @@ describe("The closest to zero function", function() {
     expect($('#test3').hasClass("closest")).toBeFalsy();
   });
 
-  it("should not style to negative eleven", function() {
+  it("should not style negative eleven", function() {
 		closestToZeroFinder.addStylesToULs();
 
     expect($('#test3').hasClass("closest")).toBeFalsy();
