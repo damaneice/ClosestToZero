@@ -7,7 +7,7 @@ function ClosestToZeroFinder() {
 		}
 		$('li', this).each(function(){
 				var number = parseInt($(this).text())
-					if (Math.abs(number) <= smallest.number){
+					if (Math.abs(number) < smallest.number || number == smallest.number){
 						smallest.number = Math.abs(number);
 						smallest.li = $(this);
 					}

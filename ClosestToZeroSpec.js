@@ -21,6 +21,10 @@ describe("The closest to zero function", function() {
 					'<li>9</li>' +
 					'<li id="test4">-11</li>' +
 				'</ul>' + 
+        '<ul>' +
+					'<li id="test5">10</li>' +
+					'<li>-10</li>' +
+				'</ul>' + 
 		'</div>'
     );
   });
@@ -35,7 +39,7 @@ describe("The closest to zero function", function() {
     expect($('#test1').hasClass("closest")).toBeTruthy();
   });
 
-  it("should not style when it is not closest to zero", function() {
+  it("should not style the 1 element", function() {
 		closestToZeroFinder.addStylesToULs();
 
     expect($('#test2').hasClass("closest")).toBeFalsy();
@@ -50,6 +54,12 @@ describe("The closest to zero function", function() {
   it("should not style negative eleven", function() {
 		closestToZeroFinder.addStylesToULs();
 
-    expect($('#test3').hasClass("closest")).toBeFalsy();
+    expect($('#test4').hasClass("closest")).toBeFalsy();
+  });
+  
+	it("should style positive number when the absolute value is identical", function() {
+		closestToZeroFinder.addStylesToULs();
+
+    expect($('#test5').hasClass("closest")).toBeTruthy();
   });
 });
